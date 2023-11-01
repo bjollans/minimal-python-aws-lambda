@@ -19,5 +19,5 @@ cd ./deployment_dependencies
 zip -r ../lambda_bundle.zip ./*
 cd -
 rm -rf ./deployment_dependencies
-zip lambda_bundle.zip ./* -r -x "lambda_bundle.zip" -x "deployment_dependencies" -x "text_data/*" -x "*__pycache__*"
+zip lambda_bundle.zip ./* -r -x "lambda_bundle.zip" -x "deployment_dependencies" -x "*__pycache__*"
 aws lambda update-function-code --function-name my_lambda --zip-file fileb://lambda_bundle.zip --region eu-central-1
